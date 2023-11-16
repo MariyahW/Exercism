@@ -61,9 +61,7 @@ export function updateScore(scoreBoard, player, points) {
 export function applyMondayBonus(scoreBoard) {
   for (const key in scoreBoard) {
     if (Object.hasOwnProperty.call(scoreBoard, key)) {
-      const element = scoreBoard[key];
-      let monday = element + 100;
-      scoreBoard[key] = monday;
+      scoreBoard[key] += 100;
     }
   }
   return scoreBoard;
@@ -76,5 +74,7 @@ export function applyMondayBonus(scoreBoard) {
  * @returns {number} normalized score
  */
 export function normalizeScore(params) {
-  
+
+    
+  return params.normalizeFunction(params.score);
 }

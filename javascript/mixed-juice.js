@@ -10,7 +10,7 @@
  * @param {string} name
  * @returns {number} time in minutes
  */
-export function timeToMixJuice(name) {
+function timeToMixJuice(name) {
   switch (name) {
     case "Pure Strawberry Joy":
       return 0.5;
@@ -40,14 +40,14 @@ export function timeToMixJuice(name) {
  * @param {string[]} limes
  * @returns {number} number of limes cut
  */
-export function limesToCut(wedgesNeeded, limes) {
+function limesToCut(wedgesNeeded, limes) {
   let wedge = wedgesNeeded;
 
   let limeCount = 0;
   let count = 0;
   // let limesThread= limes;
 
-  while (wedge >= 0) {
+  while (wedge >= 0 && limes.length>count) {
     let size = limes[count];
     switch (size) {
       case "small":
@@ -65,7 +65,7 @@ export function limesToCut(wedgesNeeded, limes) {
     }
 
     console.log(wedge);
-    console.log(limeCount);
+    // console.log(limeCount);
     count++;
   }
 
@@ -79,7 +79,7 @@ export function limesToCut(wedgesNeeded, limes) {
  * @param {string[]} orders
  * @returns {string[]} remaining orders after the time is up
  */
-export function remainingOrders(timeLeft, orders) {
+function remainingOrders(timeLeft, orders) {
   let time = timeLeft;
   let count = 0;
   let returnArray = orders;
@@ -95,3 +95,6 @@ export function remainingOrders(timeLeft, orders) {
   console.log(returnArray);
   return returnArray;
 }
+
+let limes = ["small", "large", "medium", "small"];
+let limescut = limesToCut(42, limes);

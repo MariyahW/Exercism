@@ -60,8 +60,8 @@ class ProgramWindow {
   resize(newSize) {
 
     
-    newSize.width>1 ? newSize.width>this.screenSize.width ? this.size.width=newSize.position.x :this.size.width=newSize.width : this.size.width=1;
-    newSize.height>1 ? newSize.height>this.screenSize.height ? this.size.height=newSize.position.x :this.size.height=newSize.height : this.size.height=1;
+    newSize.width>1 ? newSize.width>this.screenSize.width ? this.size.width=this.screenSize.width-this.position.x :this.size.width=newSize.width : this.size.width=1;
+    newSize.height>1 ? newSize.height>this.screenSize.height ? this.size.height=this.screenSize.height-this.position.y :this.size.height=newSize.height : this.size.h
 
     }
     // Besides the resize functionality, the ProgramWindow class should also include a method move. It should accept a parameter of type Position as input. The move method is similar to resize however, this method adjusts the position of the window to the requested value, rather than the size.
@@ -81,6 +81,19 @@ class ProgramWindow {
 newPosition.x>0? newPosition.x > this.screenSize.width ? this.position.x= this.screenSize.width-this.size.width :this.position.x=newPosition.x :this.position.x=0;
        
     }
+//     Implement a changeWindow function that accepts a ProgramWindow instance as input and changes the window to the specified size and position. The function should return the ProgramWindow instance that was passed in after the changes were applied.
+
+// The window should get a width of 400, a height of 300 and be positioned at x = 100, y = 150.
+
+changeWindow(newProgramWindow){
+const nPWSize = new Size(400,300);
+  const nPWPosition = new Position(100,150);
+
+    newProgramWindow.resize(nPWSize);
+    newProgramWindow.move(nPWPosition);
+
+    return newProgramWindow;
+}
 }
 const programWindow = new ProgramWindow();
 const newSize = new Size(300, 200);

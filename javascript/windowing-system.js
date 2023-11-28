@@ -58,10 +58,14 @@ class ProgramWindow {
   // The maximum height and width depend on the current position of the window, the edges of the window cannot move past the edges of the screen. Values larger than these bounds will be clipped to the largest size they can take. E.g. if the window's position is at x = 400, y = 300 and a resize to height = 400, width = 300 is requested, then the window would be resized to height = 300, width = 300 as the screen is not large enough in the y direction to fully accommodate the request.
 
   resize(newSize) {
-    
-    newSize.width<1? newSize.width=1: newSize.position.x > newSize.width ? (newSize.width = newSize.width) : (newSize.width = newSize.position.x);
-    newSize.height<1? newSize.height=1:newSize.position.y > newSize.height ? (newSize.height = newSize.height): (newSize.height = newSize.position.y);
-  }
+
+    if(newSize.width<1) this.size.width=1;
+     if(newSize.height<1) this.size.height=1;
+newSize.width>1 ? newSize.width>this.screenSize.width ? this.size.width=newSize.position.x :this.size.width=newSize.width : this.size.width=1;
+newSize.height>1 ? newSize.height>this.screenSize.height ? this.size.height=newSize.position.x :this.size.height=newSize.height : this.size.height=1;
+
+
+}
 }
 const programWindow = new ProgramWindow();
 const newSize = new Size(300, 200);

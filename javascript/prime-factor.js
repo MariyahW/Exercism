@@ -18,3 +18,4 @@ const primeFactors = (number) => {
   return numArray;
 };
 console.log(primeFactors(93819012551));
+

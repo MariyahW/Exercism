@@ -67,12 +67,7 @@ export function getCardPosition(stack, card) {
    * @returns {number | undefined} the first odd value
    */
   export function getFirstOddCard(stack) {
-    stack.forEach(card =>{
-        if(card%2!=0)(
-            return card;
-        )
-    })
-    return undefined;
+   return stack.find( card=> card%2!=0);
   }
   
   /**
@@ -83,6 +78,6 @@ export function getCardPosition(stack, card) {
    * @returns {number} position of the first card that is even
    */
   export function getFirstEvenCardPosition(stack) {
-    throw new Error('Implement the getFirstEvenCardPosition function');
+    return stack.findIndex( card=> card%2==0);
   }
   

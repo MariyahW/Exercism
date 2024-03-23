@@ -36,7 +36,15 @@ export function getCardPosition(stack, card) {
    * @returns {boolean} true if all cards are even, false otherwise
    */
   export function isEachCardEven(stack) {
-    throw new Error('Implement the isEachCardEven function');
+    let truthy=0;
+    stack.forEach(card =>{
+        if(card %2!=0){
+            truthy+=1
+        }
+    })
+      let bool=  truthy>0 ?  false:  true;
+    return bool;
+    
   }
   
   /**
@@ -47,7 +55,8 @@ export function getCardPosition(stack, card) {
    * @returns {boolean} true if the array contains odd card, false otherwise
    */
   export function doesStackIncludeOddCard(stack) {
-    throw new Error('Implement the doesStackIncludesOddCard function');
+    let ans = isEachCardEven(stack);
+    return !ans;
   }
   
   /**
@@ -58,7 +67,12 @@ export function getCardPosition(stack, card) {
    * @returns {number | undefined} the first odd value
    */
   export function getFirstOddCard(stack) {
-    throw new Error('Implement the getFirstOddCard function');
+    stack.forEach(card =>{
+        if(card%2!=0)(
+            return card;
+        )
+    })
+    return undefined;
   }
   
   /**

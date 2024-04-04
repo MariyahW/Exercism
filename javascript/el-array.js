@@ -21,7 +21,7 @@ export function seeingDouble(deck) {
  */
 export function threeOfEachThree(deck) {
   const newArr = [];
-  deck.reduce((accum, current) => {
+  deck.filter((current) => {
     if (current == 3) {
       newArr.push(3, 3, 3);
     } else {

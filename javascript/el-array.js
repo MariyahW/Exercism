@@ -40,7 +40,9 @@ export function threeOfEachThree(deck) {
  * @returns {number[]} deck with only two middle cards
  */
 export function middleTwo(deck) {
-  throw new Error("Implement the middleTwo function");
+  deck.splice(0, 4);
+  deck.splice(2, 4);
+  return deck;
 }
 
 /**
@@ -52,7 +54,12 @@ export function middleTwo(deck) {
  */
 
 export function sandwichTrick(deck) {
-  throw new Error("Implement the sandwichTrick function");
+  let mid = deck.length / 2;
+  deck.splice(mid, 0, deck[0]);
+  deck.shift();
+  deck.splice(mid - 1, 0, deck[deck.length - 1]);
+  deck.pop();
+  return deck;
 }
 
 /**
@@ -63,7 +70,8 @@ export function sandwichTrick(deck) {
  * @returns {number[]} deck with only 2s
  */
 export function twoIsSpecial(deck) {
-  throw new Error("Implement the twoIsSpecial function");
+  const newDeck=deck.filter((value)=>value==2);
+  return newDeck;
 }
 
 /**

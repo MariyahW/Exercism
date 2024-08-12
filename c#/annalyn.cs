@@ -15,11 +15,20 @@ static class QuestLogic
 
     public static bool CanSignalPrisoner(bool archerIsAwake, bool prisonerIsAwake)
     {
-        throw new NotImplementedException("Please implement the (static) QuestLogic.CanSignalPrisoner() method");
+        bool result = (!archerIsAwake&&prisonerIsAwake) ? true:false;
+        return result;
     }
 
     public static bool CanFreePrisoner(bool knightIsAwake, bool archerIsAwake, bool prisonerIsAwake, bool petDogIsPresent)
     {
-        throw new NotImplementedException("Please implement the (static) QuestLogic.CanFreePrisoner() method");
+             
+        if(petDogIsPresent&&!archerIsAwake){
+            return true;
+        }
+        else if(!knightIsAwake&&!archerIsAwake&&prisonerIsAwake){
+            return true;
+        }else{
+            return false;
+        }
     }
 }

@@ -19,6 +19,7 @@ static class LogLine
 
     public static string Reformat(string logLine)
     {
-        throw new NotImplementedException("Please implement the (static) LogLine.Reformat() method");
+        string result = $"{LogLine.Message(logLine)} ({LogLine.LogLevel(logLine)})";
+        return result;
     }
 }

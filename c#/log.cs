@@ -12,7 +12,9 @@ static class LogLine
 
     public static string LogLevel(string logLine)
     {
-        throw new NotImplementedException("Please implement the (static) LogLine.LogLevel() method");
+        // string [] sep = {"[","]" };
+          string [] result = logLine.Split(new char []{'[',']'});
+        return result[1].ToLower();
     }
 
     public static string Reformat(string logLine)
